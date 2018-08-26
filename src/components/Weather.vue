@@ -3,7 +3,7 @@
     <h1>Rise and Shine</h1>
     <div class="main">
       <b-card-group deck>
-          <b-card class="card-image"
+          <b-card
                   img-src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Mars_sunset_PIA01547.jpg/800px-Mars_sunset_PIA01547.jpg"
                   img-alt="Clouds in a sunset"
                   img-top>
@@ -12,21 +12,23 @@
               </h3>
           </b-card>
       </b-card-group>
-      <b-card-group deck>
-        <div class="col-xs-12">
-          <b-card
-          v-for="news in todaysNews" :key="news.source.id"
-          class="col-xs-12"
-          v-bind:img-src="news.urlToImage"
-          img-alt="Card image"
-          img-top>
-            <p>
-              {{news.title}}
-            </p>
-          </b-card>
-        </div>
-        
-      </b-card-group>
+      <div id="news">
+        <b-card-group deck>
+          <div>
+            <b-card
+              v-for="news in todaysNews" :key="news.source.id"
+              class="col-xs-12"
+              v-bind:img-src="news.urlToImage"
+              img-fluid
+              img-alt="Card image"
+              img-bottom>
+                <p>
+                  {{news.title}}
+                </p>
+            </b-card>
+          </div>
+        </b-card-group>
+      </div>
     </div>
   </div>
 </template>
@@ -100,8 +102,8 @@ li {
 a {
   color: #42b983;
 }
-.card-image {
-  width: 100%;
+.col-xs-12 {
+  padding: 20px 0 20px 0;
 }
 .main {
   margin: 150px;
