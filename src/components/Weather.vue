@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h1>Rise and Shine</h1>
         <div class="main">
             <h3>LOCAL WEATHER</h3>
             <b-card-group deck>
