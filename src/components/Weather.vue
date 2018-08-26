@@ -12,7 +12,8 @@
               </h3>
           </b-card>
       </b-card-group>
-      <div id="news">
+      <h3 id="news">NEWS</h3>
+      <div>
         <b-card-group deck>
           <div>
             <b-card
@@ -23,7 +24,7 @@
               img-alt="Card image"
               img-bottom>
                 <p>
-                  {{news.title}}
+                  <a v-bind:href="news.url">{{news.title}}</a>
                 </p>
             </b-card>
           </div>
@@ -99,14 +100,17 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
+a:hover {
   color: #42b983;
 }
 .col-xs-12 {
   padding: 20px 0 20px 0;
 }
 .main {
-  margin: 150px;
+  margin: 50px;
   text-align: center;
+}
+#news {
+  margin: 50px;
 }
 </style>
