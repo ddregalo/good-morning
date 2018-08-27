@@ -29,7 +29,7 @@ Vue.use(BootstrapVue);
 })
 export default class Weather extends Vue {
   
-    private brixtonWeather: Number = 0
+  private brixtonWeather: Number = 0
 
   async created() {
     let weatherUrl = 'http://api.openweathermap.org/' +
@@ -39,10 +39,10 @@ export default class Weather extends Vue {
     try {
       const response = axios.get(weatherUrl)
         .then(response => {
-         this.brixtonWeather = response.data.main.temp
+         return this.brixtonWeather = response.data.main.temp
         })
     } catch (e) {
-      console.log("There was an error with gettin the weather")
+      return console.log("There was an error with gettin the weather")
     }
   }
 }
